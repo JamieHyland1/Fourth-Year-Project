@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PondWater
-  m_Shader: {fileID: 4800000, guid: 36ebeec4f5bf29c468c15194fed2d1be, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3c8b25f77b9079149b46a96075266bfc, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -60,11 +60,11 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FoamDistance: 0.22
+    - _FoamDistance: 0.53
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MaxDistance: 0.5
+    - _MaxDistance: 0.17
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
