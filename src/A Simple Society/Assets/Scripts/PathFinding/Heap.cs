@@ -10,6 +10,7 @@ public class Heap<T> where T : IHeapItem<T> {
         //default contructor
     }
     public Heap(int heapMaxSize){
+        Debug.Log("heap size is" +" " + heapMaxSize);
         items = new T[heapMaxSize];
     }
     public void Add(T item){

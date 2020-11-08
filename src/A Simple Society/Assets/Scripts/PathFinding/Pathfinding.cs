@@ -2,23 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Diagnostics;
+using System;
 public class Pathfinding : MonoBehaviour
 {
     [SerializeField]
     MapTerrain map;
     [Range(0,1),SerializeField]
     List<Cell> path;
-    PathManager pathManager;
-    void Awake(){
-        pathManager = this.GetComponent<PathManager>();
-    }
    
-   public IEnumerator getPath(Vector3 start, Vector3 end){
+   public void getPath(PathRequest request, Action <PathResult> callback){
         List<Cell> path = new List<Cell>();
         Heap<Cell> openSet = new Heap<Cell>(map.MapSize());
         List<Cell> closedSet = new List<Cell>();
-        Cell strt = map.GetCellFromWorldPos(start);
-        Cell final = map.GetCellFromWorldPos(end);
+        Cell strt = map.GetCellFromWorldPos(request.start);
+        Cell final = map.GetCellFromWorldPos(request.end);
 
         openSet.Add(strt);
         if(strt.walkable && final.walkable){
@@ -32,9 +29,9 @@ public class Pathfinding : MonoBehaviour
                         path.Add(current);
                         current = current.parent;
                     }
-                    List<Cell>simplePath = SimplifyPath(path);
+                    List<Cell> simplePath = SimplifyPath(path);
                     simplePath.Reverse();
-                    pathManager.finishedProcessingPath(simplePath,true);
+                    callback(new PathResult(simplePath,true,request.callback));
                     break;
                 }
 
@@ -47,10 +44,9 @@ public class Pathfinding : MonoBehaviour
                         if(!openSet.Contains(c))openSet.Add(c);else openSet.UpdateItem(c);
                     }
                 }
-                yield return null;
             }
         }
-        pathManager.finishedProcessingPath(path,false);
+       callback(new PathResult(path,false,request.callback));
    }
 
    public float getDistance(Cell start, Cell end){
@@ -72,9 +68,5 @@ public class Pathfinding : MonoBehaviour
 
        }
        return points;
-   }
-
-   public void StartFindPath(Vector3 start, Vector3 end){
-       StartCoroutine(getPath(start, end));
    }
 }

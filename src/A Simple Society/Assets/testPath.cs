@@ -12,7 +12,8 @@ public class testPath : MonoBehaviour
    public MapTerrain map;
    void Start(){
       // transform.position = map.GetRandomPosition();
-       PathManager.RequestPath(transform.position,target.position, onPathFound);
+       PathManager.RequestPath(new PathRequest(transform.position,target.position, onPathFound));
+      StartCoroutine("wait");
    }
     public void onPathFound(List<Cell> path, bool success){
         if(success){
@@ -37,17 +38,9 @@ public class testPath : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos() {
-        if(path != null){
-            Gizmos.color = Color.black;
-            for(int i = 0; i < path.Count;i++){
-                Gizmos.DrawWireSphere(path[i].position,0.2f);
-            }
-              for(int i = 1; i < path.Count;i++){
-                Gizmos.DrawLine(path[i-1].position,path[i].position);
-            }
+  public IEnumerator wait(){
+      yield return new WaitForSeconds(Random.RandomRange(1,5));
+      
 
-        }
-    }
-
+  }
 }
