@@ -1,34 +1,33 @@
-# CA400 template repo
+# A Simple Society - Game Theory
 
-This is a template for CA400 projects.
+#### Jamie Hyland
 
-## 1. Create your repo
+#### Supervisor: Allistair Sutherland
 
-One person from your project team should fork this repo, then add other teammates as project members on GitLab.
+## Abstract
 
-## 2. Name your repo appropriately
+People in groups behave in different ways, some are cooperative and trusting others are
+aggressive and deceptive. The task is to try to create a virtual society in which individuals
+behave in different ways. Each has a different strategy, which may evolve as time goes on.
+The individuals may learn and improve their behaviour to obtain greater rewards. What
+strategy works out best in the long-run?
+The aim of this project is to simulate a simple society using genetic algorithms and key
+concepts found in Game Theory. The system simulates two types of agents, passive and
+aggressive, and attempts to find the optimal scenario where the two can co-exist without
+over population or extinction occurring.
 
-The name of your project must be of the form `2020-ca400-XXXXXXX`, where "`XXXXXXX`"
-should be replaced with your usernames (e.g. `2020-ca400-sblott-pclark`).
+## Motivation
 
-It is the *name of your repo* which matters (not the name of your project).
-
-You can change the name of your repo on GitLab under:
-
-- Settings / General / Advanced / Change path
-
-It looks like this:
-
-![change-repo-path](./res/repo-change-path.png "Change repo path.")
-
-You should replace all of this file with a README describing your own project.
-
-## Additional resources
-
-- Repo [hygiene](https://gitlab.computing.dcu.ie/sblott/local-gitlab-documentation/blob/master/repo-hygiene.md)
-- Git [cheat sheet](https://gitlab.computing.dcu.ie/sblott/local-gitlab-documentation/blob/master/cheat-sheet.md)
-- Gitlab [CI environment](https://gitlab.computing.dcu.ie/sblott/docker-ci-environment) and it's [available software](https://gitlab.computing.dcu.ie/sblott/docker-ci-environment/blob/master/Dockerfile)
-- Example projects with CI configured:
-   * [Python](https://gitlab.computing.dcu.ie/sblott/test-project-python)
-   * [Java](https://gitlab.computing.dcu.ie/sblott/test-project-java)
-   * [MySql](https://gitlab.computing.dcu.ie/sblott/test-project-mysql)
+Our motivation for the project was to learn how people in groups behave in different ways.
+Some are cooperative and trusting, others are aggressive and deceptive. We wished to
+research these different behaviours, with an emphasis on evolution. With not a lot of
+knowledge of the topic we were very interested to see which strategies would work out best
+in the long-run.
+Both of us have an interest in gaming, specifically, computer gaming. Developing a
+simulation in unity allowed us to take many aspects of building a game and add them to the
+simulation. From our experience in our third year module, Human Computer Interaction, we
+increased our interest in the design and implementation side of games.
+We were interested in this project for the inherent split in the type of work. It was clear from
+the beginning that we would be coding up this simulation in Unity, making use of different
+coding methods and 3d models we would create in blender. However we also knew that the
+analysis towards the end of the project would be almost if not as important.
